@@ -1,9 +1,9 @@
 '''
+Project Name: Population Linear Regression Practice
+Date: 02/22/2020
+
 This program plots Chinese population growth over the past 2000 years with simple linear regression.
 Data source: https://www.wikiwand.com/en/Demographics_of_China
-
-n = sample size
-m = (n(sigma(xy)) - sigma(x)*sigma(y)) /
 '''
 
 import numpy as np
@@ -17,12 +17,12 @@ def estimate_coef(x, y):
     mean_x, mean_y = np.mean(x), np.mean(y)
 
     #calculating the least squares
-    #SS_xy = n * np.sum(y*x) - np.sum(x) * np.sum(y)
-    #SS_xx = n * np.sum(x*x) - np.sum(x) * np.sum(x)
-
     SS_xy = np.sum(y*x) - n * mean_y * mean_x
     SS_xx = np.sum(x*x) - n * mean_x * mean_x
 
+    #These didn't work
+    #SS_xy = n * np.sum(y*x) - np.sum(x) * np.sum(y)
+    #SS_xx = n * np.sum(x*x) - np.sum(x) * np.sum(x)
     #SS_top = np.sum((x-mean_x)*(y-mean_y))
     #SS_bottom = np.sum(x-mean_x) * np.sum(x-mean_x)
 
